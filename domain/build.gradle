@@ -2,11 +2,18 @@ apply plugin: 'kotlin'
 
 repositories {
     jcenter()
+    maven { url "https://jitpack.io" }
+    maven { url "https://dl.bintray.com/kotlin/kotlin-eap-1.1" }
     mavenCentral()
 }
 
 dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile project(":entities")
+    compile "org.jetbrains.kotlin:kotlin-stdlib:1.0.3"
+    compile "io.reactivex:rxjava:1.1.0"
+    compile "io.reactivex:rxkotlin:0.40.1"
+
     testCompile "junit:junit:4.12"
+    testCompile 'com.github.memoizr:assertk-core:0.1.0'
     testCompile "com.nhaarman:mockito-kotlin:0.5.2"
 }
